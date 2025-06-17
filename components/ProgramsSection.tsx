@@ -64,23 +64,12 @@ export default function ProgramsSection() {
   };
 
   return (
-    <section id="programs" className="relative py-20 bg-gradient-to-b from-white to-fortis-cream overflow-hidden">
-      {/* Background elements */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute top-20 right-20 w-64 h-64 bg-fortis-orange rounded-full blur-3xl"></div>
-        <div className="absolute bottom-20 left-20 w-48 h-48 bg-fortis-teal rounded-full blur-2xl"></div>
-      </div>
-      
-      <div className="container mx-auto px-4 relative z-10">
+    <section id="programs" className="py-20 bg-gray-50">
+      <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <div className="inline-block bg-fortis-orange/10 text-fortis-orange px-4 py-2 rounded-full text-sm font-semibold mb-4">
-            OUR PROGRAMS
-          </div>
-          <h2 className="text-4xl md:text-5xl font-bold text-fortis-brown mb-6">
-            Empowering Through <span className="text-fortis-orange">Education</span>
-          </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Comprehensive programs designed to strengthen families, build skills, and create pathways to prosperity through evidence-based approaches.
+          <h2 className="text-4xl font-bold text-fortis-brown mb-6">Our Programs</h2>
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            Comprehensive programs designed to strengthen families, build skills, and create pathways to prosperity.
           </p>
         </div>
 
