@@ -64,8 +64,19 @@ export default function ProgramsSection() {
   };
 
   return (
-    <section id="programs" className="py-20 bg-gray-50">
-      <div className="container mx-auto px-4">
+    <section id="programs" className="relative py-20 overflow-hidden" style={{
+      backgroundImage: `linear-gradient(135deg, rgba(245, 245, 220, 0.95) 0%, rgba(255, 255, 255, 0.9) 100%), 
+                       url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23f4a261' fill-opacity='0.05'%3E%3Cpath d='M20 20c0 11.046-8.954 20-20 20s-20-8.954-20-20 8.954-20 20-20 20 8.954 20 20zm-3 0c0-9.389-7.611-17-17-17s-17 7.611-17 17 7.611 17 17 17 17-7.611 17-17z'/%3E%3C/g%3E%3C/svg%3E")`,
+      backgroundSize: 'cover, 40px 40px',
+      backgroundPosition: 'center, center'
+    }}>
+      {/* Decorative elements */}
+      <div className="absolute inset-0 opacity-10">
+        <div className="absolute top-10 right-10 w-40 h-40 bg-fortis-orange rounded-full blur-2xl"></div>
+        <div className="absolute bottom-10 left-10 w-32 h-32 bg-fortis-teal rounded-full blur-xl"></div>
+      </div>
+      
+      <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-fortis-brown mb-6">Our Programs</h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
