@@ -2,6 +2,7 @@
 
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Users, Target, Heart } from "lucide-react";
+import Image from "next/image";
 
 export default function HeroSection() {
   const scrollToSection = (sectionId: string) => {
@@ -12,28 +13,27 @@ export default function HeroSection() {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden" style={{
-      backgroundImage: `linear-gradient(135deg, rgba(139, 69, 19, 0.9) 0%, rgba(205, 133, 63, 0.8) 50%, rgba(218, 165, 32, 0.7) 100%), 
-                       url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Ccircle cx='30' cy='30' r='4'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
-      backgroundSize: 'cover, 60px 60px',
-      backgroundPosition: 'center, center',
-      backgroundRepeat: 'no-repeat, repeat'
-    }}>
-      {/* Overlay for better text readability */}
-      <div className="absolute inset-0 bg-gradient-to-r from-black/20 via-transparent to-black/20"></div>
-      
-      {/* Additional visual elements to simulate children/family imagery */}
-      <div className="absolute inset-0 opacity-20">
-        <div className="absolute top-1/4 left-1/4 w-32 h-32 bg-fortis-orange rounded-full blur-xl animate-pulse"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-24 h-24 bg-fortis-cream rounded-full blur-lg animate-pulse" style={{animationDelay: '1s'}}></div>
-        <div className="absolute top-3/4 left-1/3 w-16 h-16 bg-white rounded-full blur-md animate-pulse" style={{animationDelay: '2s'}}></div>
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      {/* Full-size background image */}
+      <div className="absolute inset-0 z-0">
+        <Image 
+          src="/educational-non-profit-organization-helping-students.jpg"
+          alt="Happy children" 
+          fill
+          priority
+          sizes="100vw"
+          style={{ objectFit: 'cover' }}
+        />
       </div>
       
-      <div className="container mx-auto px-4 relative z-10">
+      {/* Light overlay for text readability */}
+      <div className="absolute inset-0 z-10 bg-gradient-to-b from-transparent via-transparent to-black/60"></div>
+      
+      <div className="container mx-auto px-4 relative z-20">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Hero Content */}
           <div className="text-center lg:text-left">
-            <div className="inline-flex items-center px-4 py-2 rounded-full bg-fortis-orange/20 text-fortis-orange font-medium mb-6">
+            <div className="inline-flex items-center px-4 py-2 rounded-full bg-fortis-orange text-white font-medium mb-6">
               <Heart className="w-4 h-4 mr-2" />
               FORTIS PROLES
             </div>
@@ -42,7 +42,7 @@ export default function HeroSection() {
               Lend Your Heart To Change A <span className="text-fortis-orange">Child's Story</span>
             </h1>
             
-            <p className="text-xl text-fortis-cream mb-8 max-w-2xl mx-auto lg:mx-0 drop-shadow-md">
+            <p className="text-xl text-white mb-8 max-w-2xl mx-auto lg:mx-0 drop-shadow-md">
               Fortis Proles Inc. empowers families and individuals through comprehensive education, 
               life skills training, and community support programs designed to create lasting positive change.
             </p>
@@ -70,26 +70,26 @@ export default function HeroSection() {
           
           {/* Hero Stats */}
           <div className="grid grid-cols-2 gap-6">
-            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 shadow-lg border border-white/20">
+            <div className="bg-white/30 backdrop-blur-md rounded-2xl p-8 shadow-lg border border-white/40">
               <div className="w-12 h-12 bg-fortis-orange rounded-lg flex items-center justify-center mb-4">
                 <Users className="w-6 h-6 text-white" />
               </div>
               <h3 className="text-3xl font-bold text-white mb-2">500+</h3>
-              <p className="text-fortis-cream">Families Served</p>
+              <p className="text-white">Families Served</p>
             </div>
             
-            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 shadow-lg border border-white/20">
+            <div className="bg-white/30 backdrop-blur-md rounded-2xl p-8 shadow-lg border border-white/40">
               <div className="w-12 h-12 bg-fortis-gold rounded-lg flex items-center justify-center mb-4">
                 <Target className="w-6 h-6 text-white" />
               </div>
               <h3 className="text-3xl font-bold text-white mb-2">15</h3>
-              <p className="text-fortis-cream">Years Experience</p>
+              <p className="text-white">Years Experience</p>
             </div>
             
-            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 shadow-lg border border-white/20 col-span-2">
+            <div className="bg-white/30 backdrop-blur-md rounded-2xl p-8 shadow-lg border border-white/40 col-span-2">
               <div className="text-center">
                 <h3 className="text-2xl font-bold text-white mb-2">Our Impact</h3>
-                <p className="text-fortis-cream">
+                <p className="text-white">
                   Creating pathways to prosperity through education, empowerment, and community engagement.
                 </p>
               </div>
