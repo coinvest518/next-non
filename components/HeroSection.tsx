@@ -1,4 +1,7 @@
+'use client'
+
 import { Button } from "@/components/ui/button";
+import { ArrowRight, Users, Target, Heart } from "lucide-react";
 
 export default function HeroSection() {
   const scrollToSection = (sectionId: string) => {
@@ -9,43 +12,87 @@ export default function HeroSection() {
   };
 
   return (
-    <section id="home" className="relative bg-gradient-to-r from-fortis-brown to-fortis-peru text-white py-20">
-      {/* Background image overlay */}
-      <div className="absolute inset-0 bg-black bg-opacity-40"></div>
-      <div className="absolute inset-0">
-        <img 
-          src="https://images.unsplash.com/photo-1497486751825-1233686d5d80?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1920&h=1080" 
-          alt="Children in empowerment program" 
-          className="w-full h-full object-cover" 
-        />
+    <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-fortis-cream to-white overflow-hidden">
+      {/* Background Pattern */}
+      <div className="absolute inset-0 opacity-5">
+        <div className="absolute inset-0 bg-gradient-to-r from-fortis-brown to-fortis-orange transform rotate-12 scale-150"></div>
       </div>
       
-      <div className="relative container mx-auto px-4 text-center">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-5xl md:text-6xl font-bold mb-6">
-            Nurturing Youth from<br />
-            <span className="text-fortis-orange">Womb to Adulthood</span>
-          </h2>
-          <p className="text-xl md:text-2xl mb-8 opacity-90">
-            FORTIS PROLES INC., meaning "Strong Offspring," transforms generational cycles of poverty into strength and sustainability through youth empowerment, family support, and life skills training.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button 
-              size="lg"
-              onClick={() => scrollToSection('volunteer')}
-              className="bg-fortis-orange text-white hover:bg-fortis-orange/90 px-8 py-4 text-lg font-semibold"
-            >
-              Start Your Impact Today
-            </Button>
-            <Button 
-              size="lg"
-              variant="outline"
-              onClick={() => scrollToSection('about')}
-              className="border-2 border-white text-white hover:bg-white hover:text-fortis-brown px-8 py-4 text-lg font-semibold"
-            >
-              Learn Our Story
-            </Button>
+      <div className="container mx-auto px-4 relative z-10">
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
+          {/* Hero Content */}
+          <div className="text-center lg:text-left">
+            <div className="inline-flex items-center px-4 py-2 rounded-full bg-fortis-orange/10 text-fortis-orange font-medium mb-6">
+              <Heart className="w-4 h-4 mr-2" />
+              Empowering Strong Offspring
+            </div>
+            
+            <h1 className="text-5xl lg:text-6xl font-bold text-fortis-brown mb-6 leading-tight">
+              Building <span className="text-fortis-orange">Stronger</span> Families,
+              <br className="hidden lg:block" />
+              Brighter <span className="text-fortis-gold">Futures</span>
+            </h1>
+            
+            <p className="text-xl text-gray-700 mb-8 max-w-2xl mx-auto lg:mx-0">
+              Fortis Proles Inc. empowers families and individuals through comprehensive education, 
+              life skills training, and community support programs designed to create lasting positive change.
+            </p>
+            
+            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+              <Button 
+                size="lg" 
+                className="bg-fortis-orange text-white hover:bg-fortis-orange/90 px-8 py-3 text-lg"
+                onClick={() => scrollToSection('programs')}
+              >
+                Explore Programs
+                <ArrowRight className="ml-2 w-5 h-5" />
+              </Button>
+              
+              <Button 
+                size="lg" 
+                variant="outline" 
+                className="border-fortis-brown text-fortis-brown hover:bg-fortis-brown hover:text-white px-8 py-3 text-lg"
+                onClick={() => scrollToSection('volunteer')}
+              >
+                Get Involved
+              </Button>
+            </div>
           </div>
+          
+          {/* Hero Stats */}
+          <div className="grid grid-cols-2 gap-6">
+            <div className="bg-white rounded-2xl p-8 shadow-lg border border-fortis-cream">
+              <div className="w-12 h-12 bg-fortis-orange rounded-lg flex items-center justify-center mb-4">
+                <Users className="w-6 h-6 text-white" />
+              </div>
+              <h3 className="text-3xl font-bold text-fortis-brown mb-2">500+</h3>
+              <p className="text-gray-600">Families Served</p>
+            </div>
+            
+            <div className="bg-white rounded-2xl p-8 shadow-lg border border-fortis-cream">
+              <div className="w-12 h-12 bg-fortis-gold rounded-lg flex items-center justify-center mb-4">
+                <Target className="w-6 h-6 text-white" />
+              </div>
+              <h3 className="text-3xl font-bold text-fortis-brown mb-2">95%</h3>
+              <p className="text-gray-600">Success Rate</p>
+            </div>
+            
+            <div className="bg-white rounded-2xl p-8 shadow-lg border border-fortis-cream col-span-2">
+              <div className="text-center">
+                <h3 className="text-2xl font-bold text-fortis-brown mb-2">Our Mission</h3>
+                <p className="text-gray-600">
+                  Creating pathways to prosperity through education, empowerment, and community engagement.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      {/* Scroll Indicator */}
+      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+        <div className="w-6 h-10 border-2 border-fortis-brown rounded-full flex justify-center">
+          <div className="w-1 h-3 bg-fortis-brown rounded-full mt-2 animate-pulse"></div>
         </div>
       </div>
     </section>

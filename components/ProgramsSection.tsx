@@ -1,68 +1,75 @@
-import { Card, CardContent } from "@/components/ui/card";
+'use client'
+
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { 
-  Users, 
-  Home, 
-  GraduationCap, 
-  Heart, 
-  Shield, 
-  UserPlus,
-  Baby 
-} from "lucide-react";
+import { TrendingUp, Users, MessageSquare, GraduationCap, Heart, Baby } from "lucide-react";
 
 const programs = [
   {
-    title: "FOREX Education & Financial Literacy",
-    description: "Weekly classes for teens (ages 14+) on trading, budgeting, investing, and entrepreneurship with simulated trading environments and financial mentorships.",
-    icon: GraduationCap,
-    color: "bg-fortis-orange",
-    image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400"
+    title: "FOREX Education Program",
+    description: "Comprehensive financial literacy and foreign exchange trading education designed to build generational wealth through informed investment strategies.",
+    icon: TrendingUp,
+    duration: "12 weeks",
+    participants: "25 per cohort",
+    color: "bg-fortis-orange"
   },
   {
-    title: "Doula Certification Program",
-    description: "Training teens and young adults in full-spectrum doula care through partnerships with We Are Knowledge Power Strength LLC and local birthing centers.",
+    title: "Doula Training Certification",
+    description: "Professional doula training program providing comprehensive birth support education and certification for aspiring birth professionals.",
     icon: Heart,
-    color: "bg-fortis-brown",
-    image: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400"
+    duration: "16 weeks",
+    participants: "15 per cohort",
+    color: "bg-fortis-gold"
   },
   {
-    title: "Communication & Public Speaking",
-    description: "Youth-led workshops in public speaking, digital storytelling, and media advocacy with certification tracks for peer mentoring and career opportunities.",
-    icon: UserPlus,
-    color: "bg-fortis-peru",
-    image: "https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400"
+    title: "Communication Skills Workshop",
+    description: "Essential communication techniques for personal and professional success, focusing on conflict resolution and relationship building.",
+    icon: MessageSquare,
+    duration: "8 weeks",
+    participants: "30 per session",
+    color: "bg-fortis-brown"
   },
   {
-    title: "Self-Sufficiency & Life Skills",
-    description: "Comprehensive courses in cooking, hygiene, parenting for teen parents, conflict resolution, career preparation, and resume building.",
+    title: "Life Skills Development",
+    description: "Practical life skills training covering financial planning, time management, goal setting, and personal development strategies.",
+    icon: GraduationCap,
+    duration: "10 weeks",
+    participants: "20 per cohort",
+    color: "bg-fortis-peru"
+  },
+  {
+    title: "Family Engagement Program",
+    description: "Strengthening family bonds through structured activities, communication workshops, and conflict resolution training.",
     icon: Users,
-    color: "bg-fortis-orange",
-    image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400"
-  },
-  {
-    title: "Family Engagement & Education",
-    description: "Parenting classes, counseling and coaching for navigating systemic challenges, and family wellness programs including nutrition and mental health services.",
-    icon: Home,
-    color: "bg-fortis-brown",
-    image: "https://images.unsplash.com/photo-1511895426328-dc8714191300?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400"
+    duration: "6 weeks",
+    participants: "12 families",
+    color: "bg-fortis-orange"
   },
   {
     title: "BEBÉ GABA Partnership",
-    description: "Mission-aligned baby food brand offering nutritious, WIC-approved foods for culturally diverse families, with profits funding prenatal and infant health programming.",
+    description: "Collaborative program with BEBÉ GABA providing specialized support for new parents and early childhood development.",
     icon: Baby,
-    color: "bg-fortis-peru",
-    image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&h=400"
+    duration: "Ongoing",
+    participants: "Open enrollment",
+    color: "bg-fortis-gold"
   }
 ];
 
 export default function ProgramsSection() {
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
-    <section id="programs" className="py-20 bg-white">
+    <section id="programs" className="py-20 bg-gray-50">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h3 className="text-4xl font-bold text-fortis-brown mb-4">Our Programs</h3>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Comprehensive support services designed to empower families and strengthen communities
+          <h2 className="text-4xl font-bold text-fortis-brown mb-6">Our Programs</h2>
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            Comprehensive programs designed to strengthen families, build skills, and create pathways to prosperity.
           </p>
         </div>
 
@@ -70,34 +77,63 @@ export default function ProgramsSection() {
           {programs.map((program, index) => {
             const IconComponent = program.icon;
             return (
-              <Card key={index} className="overflow-hidden hover:shadow-xl transition-shadow border border-gray-100">
-                <img 
-                  src={program.image} 
-                  alt={program.title} 
-                  className="w-full h-48 object-cover" 
-                />
-                <CardContent className="p-6">
+              <Card key={index} className="hover:shadow-lg transition-shadow duration-300 border-0 shadow-md">
+                <CardHeader>
                   <div className={`w-12 h-12 ${program.color} rounded-lg flex items-center justify-center mb-4`}>
-                    <IconComponent className="text-white" size={24} />
+                    <IconComponent className="w-6 h-6 text-white" />
                   </div>
-                  <h4 className="text-xl font-semibold text-fortis-brown mb-3">{program.title}</h4>
-                  <p className="text-gray-600 mb-4">{program.description}</p>
+                  <CardTitle className="text-xl text-fortis-brown">{program.title}</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-gray-600 mb-6">{program.description}</p>
+                  
+                  <div className="space-y-2 mb-6">
+                    <div className="flex justify-between text-sm">
+                      <span className="text-gray-500">Duration:</span>
+                      <span className="font-medium text-fortis-brown">{program.duration}</span>
+                    </div>
+                    <div className="flex justify-between text-sm">
+                      <span className="text-gray-500">Participants:</span>
+                      <span className="font-medium text-fortis-brown">{program.participants}</span>
+                    </div>
+                  </div>
+                  
                   <Button 
-                    variant="ghost" 
-                    onClick={() => {
-                      const element = document.getElementById('contact');
-                      if (element) {
-                        element.scrollIntoView({ behavior: 'smooth' });
-                      }
-                    }}
-                    className="text-fortis-orange hover:text-fortis-orange/80 p-0"
+                    className="w-full bg-fortis-orange text-white hover:bg-fortis-orange/90"
+                    onClick={() => scrollToSection('contact')}
                   >
-                    Learn More →
+                    Learn More
                   </Button>
                 </CardContent>
               </Card>
             );
           })}
+        </div>
+
+        <div className="mt-16 text-center">
+          <div className="bg-white rounded-2xl p-8 md:p-12 shadow-lg">
+            <h3 className="text-3xl font-bold text-fortis-brown mb-6">Program Benefits</h3>
+            <div className="grid md:grid-cols-3 gap-8">
+              <div>
+                <h4 className="text-xl font-semibold text-fortis-brown mb-3">Expert Instruction</h4>
+                <p className="text-gray-600">
+                  Learn from experienced professionals with real-world expertise in their fields.
+                </p>
+              </div>
+              <div>
+                <h4 className="text-xl font-semibold text-fortis-brown mb-3">Practical Application</h4>
+                <p className="text-gray-600">
+                  Hands-on learning with immediate application to real-life situations.
+                </p>
+              </div>
+              <div>
+                <h4 className="text-xl font-semibold text-fortis-brown mb-3">Ongoing Support</h4>
+                <p className="text-gray-600">
+                  Continued guidance and community support beyond program completion.
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
