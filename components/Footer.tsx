@@ -17,12 +17,13 @@ export default function Footer() {
               Strengthening families and communities through comprehensive education, 
               skill development, and sustainable support systems.
             </p>
-            <p className="text-sm text-fortis-cream">
+            <p className="text-sm text-fortis-cream" suppressHydrationWarning>
               DOS ID: <a 
                 href="https://appext20.dos.ny.gov/corp_public/CORPSEARCH.ENTITY_INFORMATION?p_nameid=0&p_corpid=7433656&p_entity_name=fortis%20proles&p_name_type=%25&p_search_type=BEGINS&p_srch_results_page=0" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="underline hover:text-white"
+                suppressHydrationWarning
               >
                 7433656
               </a> | 501(c)(3) Nonprofit Organization
@@ -54,17 +55,17 @@ export default function Footer() {
           {/* Quick Links */}
           <div>
             <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
-            <div className="space-y-2">
-              <a href="#mission" className="block text-sm text-fortis-cream hover:text-white transition-colors">
+            <div className="space-y-2" suppressHydrationWarning>
+              <a href="#mission" className="block text-sm text-fortis-cream hover:text-white transition-colors" suppressHydrationWarning>
                 Our Mission
               </a>
-              <a href="#programs" className="block text-sm text-fortis-cream hover:text-white transition-colors">
+              <a href="#programs" className="block text-sm text-fortis-cream hover:text-white transition-colors" suppressHydrationWarning>
                 Programs
               </a>
-              <a href="#volunteer" className="block text-sm text-fortis-cream hover:text-white transition-colors">
+              <a href="#volunteer" className="block text-sm text-fortis-cream hover:text-white transition-colors" suppressHydrationWarning>
                 Volunteer
               </a>
-              <a href="#contact" className="block text-sm text-fortis-cream hover:text-white transition-colors">
+              <a href="#contact" className="block text-sm text-fortis-cream hover:text-white transition-colors" suppressHydrationWarning>
                 Contact
               </a>
             </div>
@@ -76,11 +77,11 @@ export default function Footer() {
             <p className="text-sm text-fortis-cream mb-4 md:mb-0">
               © {new Date().getFullYear()} Fortis Proles Inc. All rights reserved.
             </p>
-            <div className="flex space-x-6">
-              <a href="#" className="text-sm text-fortis-cream hover:text-white transition-colors">
+            <div className="flex space-x-6" suppressHydrationWarning>
+              <a href="#" className="text-sm text-fortis-cream hover:text-white transition-colors" suppressHydrationWarning>
                 Privacy Policy
               </a>
-              <a href="#" className="text-sm text-fortis-cream hover:text-white transition-colors">
+              <a href="#" className="text-sm text-fortis-cream hover:text-white transition-colors" suppressHydrationWarning>
                 Terms of Service
               </a>
             </div>

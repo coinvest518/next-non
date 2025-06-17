@@ -1,0 +1,108 @@
+Console Error
+
+Hydration failed because the server rendered HTML didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+See more info here: https://nextjs.org/docs/messages/react-hydration-error
+
+
+  ...
+    <HTTPAccessFallbackErrorBoundary pathname="/" notFound={[...]} forbidden={undefined} unauthorized={undefined} ...>
+      <RedirectBoundary>
+        <RedirectErrorBoundary router={{...}}>
+          <InnerLayoutRouter url="/" tree={[...]} cacheNode={{lazyData:null, ...}} segmentPath={[...]}>
+            <ClientPageRoot Component={function Home} searchParams={{}} params={{}}>
+              <Home params={Promise} searchParams={Promise}>
+                <div className="min-h-scre...">
+                  <Header>
+                  <main>
+                  <Footer>
+                    <footer className="bg-fortis-...">
+                      <div className="container ...">
+                        <div className="grid md:gr...">
+                          <div className="md:col-span-2">
+                            <div>
+                            <p>
+                            <p className="text-sm te...">
+                              <a
+                                href={"https://appext20.dos.ny.gov/corp_public/CORPSEARCH.ENTITY_INFORMATION?p_nameid..."}
+                                target="_blank"
+                                rel="noopener noreferrer"
++                               className="underline hover:text-white"
+-                               className="underline hover:text-white keychainify-checked"
+                              >
++                               7433656
+                              ...
+                          <div>
+                          <div>
+                            <h4>
+                            <div className="space-y-2">
+                              <a
+                                href="#mission"
++                               className="block text-sm text-fortis-cream hover:text-white transition-colors"
+-                               className="block text-sm text-fortis-cream hover:text-white transition-colors keychain..."
+                              >
++                               Our Mission
+                              <a
+                                href="#programs"
++                               className="block text-sm text-fortis-cream hover:text-white transition-colors"
+-                               className="block text-sm text-fortis-cream hover:text-white transition-colors keychain..."
+                              >
++                               Programs
+                              <a
+                                href="#volunteer"
++                               className="block text-sm text-fortis-cream hover:text-white transition-colors"
+-                               className="block text-sm text-fortis-cream hover:text-white transition-colors keychain..."
+                              >
++                               Volunteer
+                              <a
+                                href="#contact"
++                               className="block text-sm text-fortis-cream hover:text-white transition-colors"
+-                               className="block text-sm text-fortis-cream hover:text-white transition-colors keychain..."
+                              >
++                               Contact
+                        <div className="border-t b...">
+                          <div className="flex flex-...">
+                            <p>
+                            <div className="flex space...">
+                              <a
+                                href="#"
++                               className="text-sm text-fortis-cream hover:text-white transition-colors"
+-                               className="text-sm text-fortis-cream hover:text-white transition-colors keychainify-ch..."
+                              >
++                               Privacy Policy
+                              <a
+                                href="#"
++                               className="text-sm text-fortis-cream hover:text-white transition-colors"
+-                               className="text-sm text-fortis-cream hover:text-white transition-colors keychainify-ch..."
+                              >
++                               Terms of Service
+                  ...
+            ...
+components/Footer.tsx (21:23) @ Footer
+
+
+  19 |             </p>
+  20 |             <p className="text-sm text-fortis-cream">
+> 21 |               DOS ID: <a 
+     |                       ^
+  22 |                 href="https://appext20.dos.ny.gov/corp_public/CORPSEARCH.ENTITY_INFORMATION?p_nameid=0&p_corpid=7433656&p_entity_name=fortis%20proles&p_name_type=%25&p_search_type=BEGINS&p_srch_results_page=0" 
+  23 |                 target="_blank" 
+  24 |                 rel="noopener noreferrer"
+Call Stack
+19
+
+Show 16 ignore-listed frame(s)
+a
+<anonymous> (0:0)
+Footer
+components/Footer.tsx (21:23)
+Home
+app/page.tsx (32:7)
