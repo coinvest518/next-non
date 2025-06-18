@@ -56,7 +56,7 @@ export default function ContactSection() {
               <div className="space-y-4">
                 <div className="flex items-center space-x-4">
                   <div className="flex-shrink-0 w-12 h-12 bg-fortis-orange rounded-lg flex items-center justify-center">
-                    <MapPin className="w-6 h-6 text-white" />
+                   
                   </div>
                  
                 </div>
