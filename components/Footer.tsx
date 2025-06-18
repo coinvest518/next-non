@@ -36,10 +36,7 @@ export default function Footer() {
             <div className="space-y-3">
               <div className="flex items-center">
                 <MapPin className="w-4 h-4 mr-3 text-fortis-orange" />
-                <div className="text-sm">
-                  <p>212 Delaware Ave FL 1</p>
-                  <p>Albany, NY 12209</p>
-                </div>
+               
               </div>
               <div className="flex items-center">
                 <Phone className="w-4 h-4 mr-3 text-fortis-orange" />
