@@ -58,10 +58,7 @@ export default function ContactSection() {
                   <div className="flex-shrink-0 w-12 h-12 bg-fortis-orange rounded-lg flex items-center justify-center">
                     <MapPin className="w-6 h-6 text-white" />
                   </div>
-                  <div>
-                    <p className="font-semibold text-fortis-brown">Address</p>
-                    <p className="text-gray-600">212 Delaware Ave FL 1<br />Albany, NY 12209</p>
-                  </div>
+                 
                 </div>
 
                 <div className="flex items-center space-x-4">
